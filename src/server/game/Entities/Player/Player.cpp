@@ -14868,6 +14868,7 @@ void Player::_SaveCharacter(bool create, CharacterDatabaseTransaction trans)
         stmt->SetData(index++, GetByteValue(PLAYER_FIELD_BYTES, 2));
         stmt->SetData(index++, m_grantableLevels);
         stmt->SetData(index++, _innTriggerId);
+        stmt->SetData(index++, m_extraBonusTalentCount);
     }
     else
     {
@@ -15007,6 +15008,7 @@ void Player::_SaveCharacter(bool create, CharacterDatabaseTransaction trans)
         stmt->SetData(index++, GetByteValue(PLAYER_FIELD_BYTES, 2));
         stmt->SetData(index++, m_grantableLevels);
         stmt->SetData(index++, _innTriggerId);
+        stmt->SetData(index++, m_extraBonusTalentCount);
 
         stmt->SetData(index++, IsInWorld() && !GetSession()->PlayerLogout() ? 1 : 0);
         // Index
